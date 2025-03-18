@@ -10,9 +10,14 @@ public class User {
     @Id //Indica que tem um ID para o banco de dados
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Gera valor para o ID e da sequência conforme os objetos são criados
     private Long id;
+
     private String name;
     private String email;
     private String password;
+
+    public User(){
+
+    }
 
     public User(Long id, String name, String email, String password) {
         this.id = id;

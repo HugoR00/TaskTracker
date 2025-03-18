@@ -24,7 +24,8 @@ public class UserController {
 
     //Annotation para indicar método POST (Criar informação)
     @PostMapping
-    public User register(@RequestBody User user){return userService.register(user);}//Cria usuário no banco de dados
     //@RequestBody pega os atributos do objeto user
+    public User register(@RequestBody User user){return userService.register(user);}//Cria usuário no banco de dados
+
 
 }
