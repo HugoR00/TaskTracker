@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //Indica que é um controller
-@RequestMapping("/user") //Mapeia rotas
+@RequestMapping("/users") //Mapeia rotas
 public class UserController {
 
     //Injeção de dependência, dando ao controller ideia da existência do service

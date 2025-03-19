@@ -3,8 +3,10 @@ package com.hugo.TaskTracker.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity //Indica que é um objeto/model
-@Table(name= "Users") //Cria uma tabela no banco de dados para esse objeto
+@Table(name= "tb_users") //Cria uma tabela no banco de dados para esse objeto
 public class User {
 
     @Id //Indica que tem um ID para o banco de dados
@@ -14,6 +16,9 @@ public class User {
     private String name;
     private String email;
     private String password;
+
+    @OneToMany (mappedBy = "user") //Um user - várias tasks
+    private List<Task> taskList;
 
     public User(){
 
