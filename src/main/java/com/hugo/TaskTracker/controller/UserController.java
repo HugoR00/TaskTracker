@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//CONTROLLER PROCESSA REQUISIÇÕES, OU SEJA, CADASTRO, ALTERAÇÕES, DELEÇÕES DO MODEL E ETC SÃO FEITOS PELOS CONTROLLERS
+
 @RestController //Indica que é um controller
 @RequestMapping("/users") //Mapeia rotas
 public class UserController {
@@ -26,6 +28,10 @@ public class UserController {
     @PostMapping
     //@RequestBody pega os atributos do objeto user
     public User register(@RequestBody User user){return userService.register(user);}//Cria usuário no banco de dados
+
+    //Annotation para indicar método DELETE
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {userService.delete(id); }
 
 
 }

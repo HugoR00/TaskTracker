@@ -2,11 +2,17 @@ package com.hugo.TaskTracker.model;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity //Indica que é um objeto/model
 @Table(name= "tb_users") //Cria uma tabela no banco de dados para esse objeto
+@NoArgsConstructor //Cria construtor sem argumentos
+@AllArgsConstructor //Construtor com argumentos
+@Data //Cria getters e setters
 public class User {
 
     @Id //Indica que tem um ID para o banco de dados
@@ -20,46 +26,4 @@ public class User {
     @OneToMany (mappedBy = "user") //Um user - várias tasks
     private List<Task> taskList;
 
-    public User(){
-
-    }
-
-    public User(Long id, String name, String email, String password) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

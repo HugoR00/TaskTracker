@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//SERVICE CONTROLA AS AÇÕES QUE PODEM SER FEITAS SOBRE O MODEL, AÇÕES ESSAS QUE SÃO PROCESSADAS/GUIADAS PELO CONTROLLER
+//CRIA AS REGRAS DE NEGÓCIO
+
 @Service //Indica que é um service
 public class UserService {
     private final UserRepository userRepository;

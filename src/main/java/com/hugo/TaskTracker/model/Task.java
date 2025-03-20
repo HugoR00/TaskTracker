@@ -1,9 +1,15 @@
 package com.hugo.TaskTracker.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_tasks")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Task {
 
     @Id
@@ -17,36 +23,5 @@ public class Task {
     @JoinColumn(name = "user_id") //Foreign key
     private User user;
 
-    public Task() {
-    }
 
-    public Task(Long id, String title, String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
